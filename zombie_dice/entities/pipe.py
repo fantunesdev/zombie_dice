@@ -3,13 +3,13 @@ import random
 from zombie_dice.entities.dice import Dice
 
 
-class Tube:
+class Pipe:
     def __init__(self):
         self.dices = []
-        self.__init_tube()
+        self.__init_pipe()
         self.drawn = []
 
-    def __init_tube(self):
+    def __init_pipe(self):
         self.dices = []
         for i in range(6):
             self.dices.append(Dice('green'))
@@ -27,7 +27,7 @@ class Tube:
         while len(self.drawn) < 3:
             try:
                 if len(self.dices) <= 1:
-                    self.__init_tube()
+                    self.__init_pipe()
                 drawn_index = random.randint(1, len(self.dices))
                 self.drawn.append(self.dices[drawn_index])
                 del(self.dices[drawn_index])
