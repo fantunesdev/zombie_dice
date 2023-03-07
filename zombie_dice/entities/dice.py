@@ -7,6 +7,12 @@ class Dice:
     def __init__(self, color: str):
         self.__color = color
 
+    def __eq__(self, other):
+        return self.__color == other.__color
+
+    def __ne__(self, other):
+        return self.__color != other.__color
+
     def __repr__(self):
         if self.__color == 'green':
             return f'{Back.GREEN}{Fore.BLACK}{Style.BRIGHT} VERDE {Style.RESET_ALL}'
